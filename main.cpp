@@ -45,7 +45,7 @@ char* parseDrive(int argc, char** argv) {
 }
 
 off_t parseStart(int argc, char** argv) {
-    for(int n = 0; n < argc - 1; ++n) {
+    for(int n = 1; n < argc - 1; ++n) {
         char *arg = argv[n];
         if (strcmp(arg, "--start") == 0) {
             return strtol(argv[n + 1], NULL, 0);
@@ -55,7 +55,7 @@ off_t parseStart(int argc, char** argv) {
 }
 
 size_t parseLength(int argc, char** argv) {
-    for(int n = 0; n < argc - 1; ++n) {
+    for(int n = 1; n < argc - 1; ++n) {
         char *arg = argv[n];
         if (strcmp(arg, "--length") == 0) {
             return strtoul(argv[n + 1], NULL, 0);
